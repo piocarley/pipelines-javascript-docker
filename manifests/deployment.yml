@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: piocarleypipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: piocarleypipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: piocarleypipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: piocarleypipelinesjavascriptdocker 
+          image: mypipelineregistry.azurecr.io/piocarleypipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
